@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Simple Flask CRUD</title>
+  </head>
+  <body>
+    <h3>Books</h3>
+    <form method="POST" action="/">
+      <input type="text" name="title" placeholder="Title">
+      <input type="submit" value="Add">
+    </form>
+    <!-- percorrendo os registros -->
+    <table>
+      <tr>
+        <th>Title</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      {% for book in books %}
+      <tr>
+        <td>{{book.title}}</td>
+        <td>
+          Edit
+        </td>
+        <td>Remove</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
